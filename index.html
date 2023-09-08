@@ -45,23 +45,23 @@
     </div>
     <script>
       const days = [
+        "sunday",
         "monday",
         "tuesday",
         "wednesday",
         "thursday",
         "friday",
         "saturday",
-        "sunday",
       ];
 
       const day = document.querySelector("#weekDay");
-      day.innerHTML = days[new Date().getDay().toString() - 1];
-      
+      day.innerHTML = days[new Date().getDay().toString()   ];
+
       const time = document.querySelector("#time");
       function getMilli() {
-        time.innerHTML = new Date().getMilliseconds();
-      };
-      setInterval(getMilli, 1000);
+        time.innerHTML = new Date().getUTCMilliseconds();
+      }
+      setInterval(getMilli, 1);
     </script>
   </body>
 </html>
