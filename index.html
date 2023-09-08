@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>HNG Internship | Stage One</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <p>Slack Name</p>
+        <h1 data-testid="slackUserName">Caleb Okpaheifufue</h1>
+      </div>
+      <div>
+        <p>Slack Display Picture</p>
+        <img
+          src="/dp.jpg"
+          alt="Caleb Okpaheifufue"
+          data-testid="slackDisplayImage"
+        />
+      </div>
+      <div>
+        <p>Current Day of the Week</p>
+        <p id="weekDay" data-testid="currentDayOfTheWeek"></p>
+      </div>
+      <div>
+        <p>Current UTC Time</p>
+        <p id="time" data-testid="currentUTCTime"></p>
+      </div>
+      <div>
+        <p>Track</p>
+        <p data-testid="myTrack">Frontend</p>
+      </div>
+      <div>
+        <p>GitHub URL</p>
+      </div>
+    </div>
+    <script>
+      const days = [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+      ];
+      const day = document.querySelector("#weekDay");
+      day.innerHTML = days[new Date().getDay().toString() - 1];
+
+      const time = document.querySelector("#time")
+      time.innerHTML = new Date().getUTCMilliseconds()
+    </script>
+  </body>
+</html>
