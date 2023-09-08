@@ -7,33 +7,40 @@
     <title>HNG Internship | Stage One</title>
   </head>
   <body>
-    <div>
-      <div>
-        <p>Slack Name</p>
-        <h1 data-testid="slackUserName">Caleb Okpaheifufue</h1>
+    <div class="container">
+      <div class="container">
+        <p class="label">Slack Name</p>
+        <h1 class="u-name" data-testid="slackUserName">Caleb Okpaheifufue</h1>
       </div>
-      <div>
-        <p>Slack Display Picture</p>
+      <div class="container">
+        <p class="label">Slack Display Picture</p>
         <img
           src="/dp.jpg"
           alt="Caleb Okpaheifufue"
+          class="dp"
           data-testid="slackDisplayImage"
         />
       </div>
-      <div>
-        <p>Current Day of the Week</p>
-        <p id="weekDay" data-testid="currentDayOfTheWeek"></p>
+      <div class="container">
+        <p class="label">Current Day of the Week</p>
+        <p class="attribute" id="weekDay" data-testid="currentDayOfTheWeek"></p>
       </div>
-      <div>
-        <p>Current UTC Time</p>
-        <p id="time" data-testid="currentUTCTime"></p>
+      <div class="container">
+        <p class="label">Current UTC Time (milliseconds)</p>
+        <p class="attribute" id="time" data-testid="currentUTCTime"></p>
       </div>
-      <div>
-        <p>Track</p>
-        <p data-testid="myTrack">Frontend</p>
+      <div class="container">
+        <p class="label">Track</p>
+        <p class="attribute" data-testid="myTrack">Frontend</p>
       </div>
-      <div>
-        <p>GitHub URL</p>
+      <div class="container">
+        <p class="label">GitHub URL</p>
+        <a
+          href="https://github.com/Caleb-1023/stage-one-display-credentials"
+          data-testid="githubURL"
+          class="button"
+          >GitHub Repository</a
+        >
       </div>
     </div>
     <script>
@@ -46,11 +53,15 @@
         "saturday",
         "sunday",
       ];
+
       const day = document.querySelector("#weekDay");
       day.innerHTML = days[new Date().getDay().toString() - 1];
-
-      const time = document.querySelector("#time")
-      time.innerHTML = new Date().getUTCMilliseconds()
+      
+      const time = document.querySelector("#time");
+      function getMilli() {
+        time.innerHTML = new Date().getMilliseconds();
+      };
+      setInterval(getMilli, 1000);
     </script>
   </body>
 </html>
